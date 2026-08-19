@@ -3,16 +3,15 @@ import sys
 
 import pytest
 
-# ensure src is on sys.path so `myproject` package can be imported
+# ensure the project root is on sys.path so the `app` package can be imported
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-SRC = os.path.join(ROOT, "src")
-if SRC not in sys.path:
-    sys.path.insert(0, SRC)
+if ROOT not in sys.path:
+    sys.path.insert(0, ROOT)
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from myproject.models.models import Base
+from app.models.models import Base
 
 
 @pytest.fixture(scope="module")

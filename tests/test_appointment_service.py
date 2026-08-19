@@ -1,15 +1,15 @@
 from datetime import UTC, datetime, timedelta
 
-from myproject.schemas.appointments import AppointmentCreate
-from myproject.schemas.doctors import DoctorCreate
-from myproject.schemas.schemas import PatientCreate
-from myproject.services.appointment_service import (
+from app.schemas.appointments import AppointmentCreate
+from app.schemas.doctors import DoctorCreate
+from app.schemas.schemas import PatientCreate
+from app.services.appointment_service import (
     create_appointment,
     get_appointment,
     list_appointments,
 )
-from myproject.services.doctor_service import create_doctor
-from myproject.services.patient_service import create_patient
+from app.services.doctor_service import create_doctor
+from app.services.patient_service import create_patient
 
 
 def test_appointment_creation_and_overlap(db):

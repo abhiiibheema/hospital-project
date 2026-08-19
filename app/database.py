@@ -4,7 +4,7 @@ from pathlib import Path
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from myproject.models.models import Base
+from app.models.models import Base
 
 # try:
 # 	# Preferred: import as package when run with project root on PYTHONPATH
@@ -21,7 +21,7 @@ from myproject.models.models import Base
 # 	from myproject.models.models import Base
 
 
-project_root = Path(__file__).resolve().parents[2]
+project_root = Path(__file__).resolve().parents[1]
 db_path = project_root / "my_project.db"
 DATABASE_URL = f"sqlite:///{db_path.as_posix()}"
 

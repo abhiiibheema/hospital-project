@@ -1,5 +1,5 @@
-from myproject.schemas.doctors import DoctorCreate
-from myproject.services.doctor_service import create_doctor, get_doctor, list_doctors
+from app.schemas.doctors import DoctorCreate
+from app.services.doctor_service import create_doctor, get_doctor, list_doctors
 
 
 def test_doctor_crud(db):

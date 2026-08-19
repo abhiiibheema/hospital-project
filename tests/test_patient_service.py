@@ -1,5 +1,5 @@
-from myproject.schemas.schemas import PatientCreate
-from myproject.services.patient_service import (
+from app.schemas.schemas import PatientCreate
+from app.services.patient_service import (
     create_patient,
     get_patient,
     list_patients,

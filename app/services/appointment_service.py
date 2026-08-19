@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 
-from myproject.models.models import Appointment
-from myproject.schemas.appointments import AppointmentCreate
+from app.models.models import Appointment
+from app.schemas.appointments import AppointmentCreate
 
 
 def list_appointments(db: Session):

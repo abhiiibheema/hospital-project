@@ -2,8 +2,8 @@ from datetime import UTC, datetime, timedelta
 
 from fastapi.testclient import TestClient
 
-from myproject.database import get_session
-from myproject.main import app
+from app.database import get_session
+from app.main import app
 
 
 def test_routers_crud_and_errors():
@@ -13,7 +13,7 @@ def test_routers_crud_and_errors():
     from sqlalchemy import create_engine
     from sqlalchemy.orm import sessionmaker
 
-    from myproject.models.models import Base
+    from app.models.models import Base
 
     with tempfile.NamedTemporaryFile(delete=False) as tf:
         db_url = f"sqlite:///{tf.name}"

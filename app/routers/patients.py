@@ -2,9 +2,9 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from myproject.database import get_session
-from myproject.schemas.schemas import PatientCreate, PatientRead
-from myproject.services.patient_service import (
+from app.database import get_session
+from app.schemas.schemas import PatientCreate, PatientRead
+from app.services.patient_service import (
     create_patient,
     get_patient,
     list_patients,

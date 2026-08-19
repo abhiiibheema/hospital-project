@@ -13,7 +13,7 @@ RUN apt-get update \
 # Copy project metadata first to leverage Docker layer cache
 # Copy project metadata and requirements first to leverage Docker layer cache
 COPY pyproject.toml README.md requirements.txt /app/
-COPY src/ /app/src/
+COPY app/ /app/app/
 
 # Upgrade pip and install runtime requirements, then install the package
 RUN pip install --upgrade pip setuptools wheel \
@@ -23,4 +23,4 @@ RUN pip install --upgrade pip setuptools wheel \
 EXPOSE 8000
 
 # Run the FastAPI app using Uvicorn
-CMD ["python", "-m", "uvicorn", "myproject.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

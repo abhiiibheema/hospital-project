@@ -1,6 +1,6 @@
 import importlib
 
-from myproject import database
+from app import database
 
 
 def test_get_session_yields_session():
@@ -23,7 +23,7 @@ def test_main_on_startup_calls_init_db(monkeypatch):
     monkeypatch.setattr(database, "init_db", fake_init_db)
 
     # reload main so it binds to the monkeypatched database.init_db
-    main = importlib.reload(importlib.import_module("myproject.main"))
+    main = importlib.reload(importlib.import_module("app.main"))
     # call the startup function directly
     main.on_startup()
     assert called["ok"] is True
